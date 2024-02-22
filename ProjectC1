@@ -1,0 +1,172 @@
+#include <iostream>
+#include <string>
+
+using u32 = uint32_t;
+
+
+class Cinema {
+private:
+    u32 age_;
+    std::string name_;
+public:
+    Cinema() {
+        this->name_ = "Film";
+    }
+};
+
+class Genre : public Cinema {
+public:
+    Genre() { std::cout << "Genre created" << std::endl; }
+};
+
+class Comedy: public Genre {
+public:
+    Comedy() {std::cout << "Comedy created" << std::endl;}
+    void PrintExample() { std::cout << "Cristmass tree" << std::endl;}
+};
+
+class Action: public Genre {
+public:
+    Action() {std::cout << "Action created" << std::endl;}
+    void PrintExample() { std::cout << "Deadpool" << std::endl;}
+};
+
+class AnimatedFilms: public Genre {
+public:
+    AnimatedFilms() {std::cout << "AnimatedFilms created" << std::endl;}
+    void PrintExample() { std::cout << "Lion King" << std::endl;}
+};
+class Drama: public Genre {
+public:
+    Drama() {std::cout << "Drama created" << std::endl;}
+    void PrintExample() { std::cout << "After" << std::endl;}
+};
+
+class Fantasy: public Genre {
+public:
+    Fantasy() {std::cout << "Fantasy created" << std::endl;}
+    void PrintExample() { std::cout << "Fantastics beats" << std::endl;}
+};
+
+class Horror: public Genre {
+public:
+    Horror() {std::cout << "Horror created" << std::endl;}
+    void PrintExample() { std::cout << "It" << std::endl;}
+};
+
+class ScienceFiction: public Genre {
+public:
+    ScienceFiction() {std::cout << "ScienceFiction created" << std::endl;}
+    void PrintExample() { std::cout << "Interstellar" << std::endl;}
+};
+
+class Musical: public Genre {
+public:
+    Musical() {std::cout << "Musical created" << std::endl;}
+    void PrintExample() { std::cout << "La La Land" << std::endl;}
+};
+
+class RomCom: public Genre {
+public:
+    RomCom() {std::cout << "RomCom created" << std::endl;}
+    void PrintExample() { std::cout << "Palm Springs" << std::endl;}
+};
+
+class Thriller: public Genre {
+public:
+    Thriller() {std::cout << "Thriller created" << std::endl;}
+    void PrintExample() { std::cout << "Split" << std::endl;}
+};
+
+class Creators: public Cinema {
+public:
+    Creators() {std::cout << "Creators created" << std::endl;}
+};
+
+class Director: public Creators {
+public:
+    Director() {std::cout << "Director created" << std::endl;}
+    void PrintExample() { std::cout << "Tim Burton" << std::endl;}
+};
+
+class Actor: public Creators {
+public:
+    Actor() {std::cout << "Actor created" << std::endl;}
+    void PrintExample() { std::cout << "Johnny Depp" << std::endl;}
+};
+
+class Operator: public Creators {
+public:
+    Operator() {std::cout << "Operator created" << std::endl;}
+    void PrintExample() { std::cout << "Dariusz Wolski" << std::endl;}
+};
+
+class MakeUpArtist: public Creators {
+public:
+    MakeUpArtist() {std::cout << "MakeUpArtist created" << std::endl;}
+    void PrintExample() { std::cout << "Ve Neill" << std::endl;}
+};
+
+class Screenwriter: public Creators {
+public:
+    Screenwriter() {std::cout << "Screenwriter created" << std::endl;}
+    void PrintExample() { std::cout << "James Cameron" << std::endl;}
+};
+
+class Producer: public Creators {
+public:
+    Producer() {std::cout << "Producer created" << std::endl;}
+    void PrintExample() { std::cout << "Steven Spielberg" << std::endl;}
+};
+
+class Composer: public Creators {
+public:
+    Composer() {std::cout << "Composer created" << std::endl;}
+    void PrintExample() { std::cout << "Hans Zimmer" << std::endl;}
+};
+
+
+
+
+int main() {
+    std::string genre_name;
+    std::cout << "Enter the genre name: ";
+    std::cin >> genre_name;
+
+    if (genre_name == "Comedy") {
+        Comedy C1;
+        C1.PrintExample();
+    } else if (genre_name == "Drama") {
+        Drama D1;
+        D1.PrintExample();
+    } else if (genre_name == "ScienceFiction") {
+        ScienceFiction S1;
+        S1.PrintExample();
+    } else if (genre_name == "Action") {
+        Action A1;
+        A1.PrintExample();
+    } else if (genre_name == "AnimatedFilms") {
+        AnimatedFilms An1;
+        An1.PrintExample();
+    } else if (genre_name == "Fantasy") {
+        Fantasy F1;
+        F1.PrintExample();
+    } else if (genre_name == "Horror") {
+        Horror H1;
+        H1.PrintExample();
+    } else if (genre_name == "Musical") {
+        Musical M1;
+        M1.PrintExample();
+    } else if (genre_name == "RomCom") {
+        RomCom R1;
+        R1.PrintExample();
+    } else if (genre_name == "Thriller") {
+        Thriller T1;
+        T1.PrintExample();
+    } else {
+        std::cout << "Invalid genre name entered." << std::endl;
+    }
+
+    return 0;
+}
+
